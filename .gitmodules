@@ -1,0 +1,11 @@
+[submodule "submodules/py-gear"]
+	path = submodules/py-gear
+	url = https://github.com/stephensmitchell/py-gear
+[submodule "submodules/alibre-script-adk"]
+	path = submodules/alibre-script-adk
+	url = https://github.com/stephensmitchell/alibre-script-adk
+
+
+
+
+

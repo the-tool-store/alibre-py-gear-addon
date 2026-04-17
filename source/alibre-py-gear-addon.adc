@@ -1,0 +1,10 @@
+﻿<AlibreDesignAddOn specificationVersion="2" friendlyName="alibre-py-gear-addon">
+<Author name="Stephen S. Mitchell" link="https://github.com/stephensmitchell/alibre-py-gear-addon"/>
+   <Copyright>Copyright (c) 2025 Stephen S. Mitchell|https://github.com/Eymeric65/py-gear</Copyright>
+   <DLL type="Managed" loadedWhen="Startup" location="alibre-py-gear-addon.dll"/>
+   <Icon location="logo.ico"/> 
+   <Menu text="alibre-py-gear-addon"/>
+   <Description>alibre-py-gear-addon</Description> 
+   <Workspace type="Always"/>
+   <Property name="Identifier" value="alibre-py-gear-addon"/>
+</AlibreDesignAddOn>
