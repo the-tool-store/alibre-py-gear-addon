@@ -294,7 +294,7 @@ def generate_internal_tooth_profile(z, m, alpha_deg, thickness, profile_shift=0.
     start_angle_external = -involute_function(addendum_involute_angle)  - angular_width_lower/2
     end_angle_external = start_angle_lower + angular_width_lower/2
     for i in range(num_points[3]):
-        t = i / (num_points[3] - 1)
+        t = float(i) / (num_points[3] - 1)
         theta_arc = start_angle_external + t * (end_angle_external - start_angle_external)
         x_arc = (dedendum_radius+thickness) * math.cos(theta_arc)
         y_arc = (dedendum_radius+thickness) * math.sin(theta_arc)

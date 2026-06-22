@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <RootNamespace></RootNamespace>
@@ -33,15 +33,15 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AlibreAddOn">
-      <HintPath>C:\Program Files\Alibre Design 28.1.1.28227\Program\AlibreAddOn.dll</HintPath>
+      <HintPath>C:\Program Files\Alibre Design 29.0.0.29060\Program\AlibreAddOn.dll</HintPath>
       <Private>False</Private>
     </Reference>
 <Reference Include="AlibreScriptAddOn">
-  <HintPath>C:\Program Files\Alibre Design 28.1.1.28227\Program\Addons\AlibreScript\AlibreScriptAddOn.dll</HintPath>
+  <HintPath>C:\Program Files\Alibre Design 29.0.0.29060\Program\Addons\AlibreScript\AlibreScriptAddOn.dll</HintPath>
   <Private>False</Private>
 </Reference>
     <Reference Include="AlibreX">
-      <HintPath>C:\Program Files\Alibre Design 28.1.1.28227\Program\AlibreX.dll</HintPath>
+      <HintPath>C:\Program Files\Alibre Design 29.0.0.29060\Program\AlibreX.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

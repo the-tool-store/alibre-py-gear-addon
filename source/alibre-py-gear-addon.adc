@@ -6,5 +6,5 @@
    <Menu text="alibre-py-gear-addon"/>
    <Description>alibre-py-gear-addon</Description> 
    <Workspace type="Always"/>
-   <Property name="Identifier" value="alibre-py-gear-addon"/>
+   <Property name="Identifier" value="{51455D8D-6FC7-4A32-B690-D7DC2C0813AF}"/>
 </AlibreDesignAddOn>

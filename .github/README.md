@@ -1,42 +1,30 @@
-# alibre-py-gear-addon
+# Alibre Py-Gear Add-On
 
-> Note: This repository is undergoing significant changes and is currently a work in progress.
+An Alibre Design add-on that generates parametric involute spur gear profiles on a selected plane in the active part, driven by a dialog and IronPython.
 
-| Item | Value |
-| --- | --- |
-| Type | Alibre add-on / plugin |
-| Primary stack | Python, VB.NET, Alibre automation |
-
-## Overview
-This repository contains the source and supporting assets for alibre-py-gear-addon, organized under the standardized repository layout.
-
-## Repository Layout
-- source/: project source, solution or project files, and runtime assets.
-- submodules/: external git submodules used by the repository when required.
-- documentation/: supplementary notes, changelogs, and non-GitHub documentation.
-- .github/: repository README, templates, and GitHub-specific community files.
-- `source/alibre-py-gear-addon-solution.sln`: key source or build entry point.
-- `source/alibre-py-gear-addon.adc`: key source or build entry point.
-- `source/alibre-py-gear-addon.vbproj`: key source or build entry point.
-- `source/scripts/alibre_setup.py`: key source or build entry point.
-- `source/scripts/Template.py`: key source or build entry point.
-- `LICENSE`: repository license file kept at the root.
+## Features
+- Generates external and internal involute spur gear sketches.
+- Configurable parameters: number of teeth, module, pressure angle, and profile shift.
+- Optional automatic profile shift to suppress undercut on low-tooth-count gears.
+- Builds tooth geometry from involute, trochoid root, and addendum/dedendum arc segments.
+- Creates each gear on a user-selected plane with a unique sketch name and stores pitch radius and tooth count as part parameters.
 
 ## Requirements
-- Windows development environment.
-- A .NET build environment compatible with the projects under source/.
-- Python installed if you need to run or modify the Python components under source/.
-- Alibre Design installed if you need to run, debug, or validate the Alibre integration.
+- Alibre Design 29.x (built and referenced against Alibre Design 29.0.0.29060, including the AlibreScript add-on).
+- .NET Framework 4.8.1 (net481).
+- IronPython 2.7.10 (bundled in the add-on output).
 
-## Build and Use
-1. Open `source/alibre-py-gear-addon-solution.sln` in your preferred IDE.
-2. Restore dependencies and build from the source/ layout.
-3. Use the notes in documentation/ and .github/README.md as the primary repository guide.
+## Installation
+1. Build the `source/alibre-py-gear-addon.vbproj` project (or open `source/alibre-py-gear-addon-solution.sln`) in the Release configuration.
+2. Copy the build output (the `alibre-py-gear-addon.dll`, the IronPython runtime DLLs, `logo.ico`, the `scripts` folder, and the `alibre-py-gear-addon.adc` manifest) into an Alibre add-ons directory.
+3. Start Alibre Design. The `.adc` manifest registers the add-on, which loads at startup and adds a **py-gear** menu.
 
-## Current Limitations
-- The repository has been normalized for layout consistency; any path-sensitive tooling should be revalidated against the new folder structure.
-- Existing runtime behavior and project-specific limitations remain unchanged.
+## Usage
+1. Open or create a part in Alibre Design.
+2. From the **py-gear** menu, choose **py-gear Tool** to open the gear generator dialog.
+3. Set the number of teeth, module, pressure angle, profile shift, and (for internal gears) thickness, then choose External or Internal gear.
+4. Click the plane selector, then pick a plane in the workspace.
+5. Click **Create Gear** to generate the gear sketch on the selected plane. Enable **Stay open after creating** to create multiple gears in one session.
 
 ## License
 See [LICENSE](../LICENSE).
-
