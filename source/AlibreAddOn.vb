@@ -144,7 +144,7 @@ Namespace AlibreAddOnAssembly
         End Function
         Public Function MenuIcon(menuID As Integer) As String Implements IAlibreAddOn.MenuIcon
             Select Case menuID
-                Case ROOT_ID : Return ""                  
+                Case ROOT_ID : Return ""
                 Case CMD : Return "logo.ico"
                 Case Else : Return ""
             End Select
