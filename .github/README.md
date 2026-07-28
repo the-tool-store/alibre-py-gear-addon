@@ -19,7 +19,6 @@
     - `source/` holds the VB.NET add-on, the gear script, and the manifest.
     - `submodules/` holds the py-gear geometry source and the Alibre Script ADK.
     - `documentation/` holds reference notes.
-    - `reviews/` holds dated code reviews.
   - Good to know
     - The gear script runs under IronPython 2.7, so keep it compatible with Python 2.7.
   - Use it under the MIT License.
