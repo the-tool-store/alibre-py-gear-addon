@@ -1,5 +1,4 @@
-﻿# Version 3
-import clr
+﻿import clr
 clr.AddReference('AlibreX')
 clr.AddReference('AlibreScriptAddOn')
 import AlibreX

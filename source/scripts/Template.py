@@ -111,7 +111,7 @@ def generate_external_tooth_profile(z, m, alpha_deg, profile_shift=0.0, undercut
     max_involute_angle = addendum_involute_angle + involute_function(addendum_involute_angle)
     if base_radius < dedendum_radius:
         deddendum_involute_angle = math.acos(base_radius / dedendum_radius)
-    else : 
+    else :
         deddendum_involute_angle = 0
     min_involute_angle = deddendum_involute_angle + involute_function(deddendum_involute_angle)
     tooth_angle = -angular_tooth_width - 2 * phi
@@ -140,9 +140,9 @@ def generate_external_tooth_profile(z, m, alpha_deg, profile_shift=0.0, undercut
         for i in range(num_points[1]):
             t = float(i) / (num_points[1] - 1)
             theta_tro = t * offset_trochoid_angle
-            x_tro = (base_radius * (math.cos(theta_tro) + theta_tro * math.sin(theta_tro)) - 
+            x_tro = (base_radius * (math.cos(theta_tro) + theta_tro * math.sin(theta_tro)) -
                     t_trochoid * math.cos(theta_tro))
-            y_tro = (base_radius * (math.sin(theta_tro) - theta_tro * math.cos(theta_tro)) - 
+            y_tro = (base_radius * (math.sin(theta_tro) - theta_tro * math.cos(theta_tro)) -
                     t_trochoid * math.sin(theta_tro))
             cos_beta = math.cos(beta_trochoid)
             sin_beta = math.sin(beta_trochoid)
@@ -171,7 +171,7 @@ def generate_external_tooth_profile(z, m, alpha_deg, profile_shift=0.0, undercut
     if base_radius > dedendum_radius:
         start_angle_lower = tooth_angle - beta_trochoid
         end_angle_lower = -angular_tooth_width * 2 + beta_trochoid
-    else: 
+    else:
         start_angle_lower = tooth_angle + involute_function(deddendum_involute_angle)
         end_angle_lower = -angular_tooth_width * 2 - involute_function(deddendum_involute_angle)
     for i in range(num_points[3]):
@@ -244,7 +244,7 @@ def generate_internal_tooth_profile(z, m, alpha_deg, thickness, profile_shift=0.
     dedendum_involute_angle = math.acos(base_radius / dedendum_radius)
     if base_radius < addendum_radius:
         addendum_involute_angle = math.acos(base_radius / addendum_radius)
-    else : 
+    else :
         addendum_involute_angle = 0
     max_involute_angle = dedendum_involute_angle + involute_function(dedendum_involute_angle)
     min_involute_angle = addendum_involute_angle + involute_function(addendum_involute_angle)
@@ -326,8 +326,8 @@ def alibre_arc(sketch, arc, reverse = False):
         end_pt = arc[0]
     center_x, center_y = 0.0, 0.0
     lower_arc = sketch.AddArcCenterStartEnd(center_x, center_y, start_pt[0], start_pt[1], end_pt[0], end_pt[1], False)
-    print("  Created lower dedendum arc from (" + str(round(start_pt[0], 3)) + ", " + 
-            str(round(start_pt[1], 3)) + ") to (" + str(round(end_pt[0], 3)) + ", " + 
+    print("  Created lower dedendum arc from (" + str(round(start_pt[0], 3)) + ", " +
+            str(round(start_pt[1], 3)) + ") to (" + str(round(end_pt[0], 3)) + ", " +
             str(round(end_pt[1], 3)) + ")")
     return lower_arc
 def alibre_spline(sketch, points):
@@ -337,7 +337,7 @@ def alibre_spline(sketch, points):
             spline_points.append(x)
             spline_points.append(y)
         spline = sketch.AddBspline(spline_points, False)
-    else: 
+    else:
         spline = None
     return spline
 def create_external_gear_in_alibre(z, m, alpha_deg, profile_shift=0.0,
@@ -359,7 +359,7 @@ def create_external_gear_in_alibre(z, m, alpha_deg, profile_shift=0.0,
     try:
         print("Generating gear profile: z=" + str(z) + ", m=" + str(m) + ", alpha=" + str(alpha_deg) + "°")
         tooth_profile = generate_external_tooth_profile(
-                z=z, m=m, alpha_deg=alpha_deg, 
+                z=z, m=m, alpha_deg=alpha_deg,
                 profile_shift=profile_shift,
                 undercut_auto_suppress=undercut_auto_suppress
         )
@@ -378,7 +378,7 @@ def create_external_gear_in_alibre(z, m, alpha_deg, profile_shift=0.0,
         lower_arc = alibre_arc(sketch, tooth_profile['lower_arc'])
         arc_end = tooth_profile['lower_arc'][-1]
         arc_to_center = sketch.AddLine(arc_end[0], arc_end[1], 0, 0, False)
-        print("  Created return line from dedendum arc to center: (" + 
+        print("  Created return line from dedendum arc to center: (" +
                 str(round(arc_end[0], 3)) + ", " + str(round(arc_end[1], 3)) + ") -> (0,0)")
         print("Sketch completed successfully")
         return tooth_profile['parameters']
@@ -406,7 +406,7 @@ def create_internal_gear_in_alibre(z, m, alpha_deg, profile_shift=0.0,
     try:
         print("Generating gear profile: z=" + str(z) + ", m=" + str(m) + ", alpha=" + str(alpha_deg) + "°")
         tooth_profile = generate_internal_tooth_profile(
-                z=z, m=m, alpha_deg=alpha_deg, 
+                z=z, m=m, alpha_deg=alpha_deg,
                 thickness=thickness,
                 profile_shift=profile_shift,
                 undercut_auto_suppress=undercut_auto_suppress
@@ -858,7 +858,6 @@ def show_gear_form():
                     internal=is_internal
                 )
                 gear_counter[0] += 1
-                #show_info("Gear '%s' created successfully!" % unique_name, "Success")
                 if not chk_stay_open.Checked:
                     close_form_safely()
                 else:
